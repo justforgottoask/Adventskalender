@@ -2,23 +2,31 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digitaler Adventskalender</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f0f0f0;
+            background: #f7f7f7 url('https://source.unsplash.com/1600x900/?winter,snow') no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
         }
         .calendar {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             gap: 10px;
-            width: 80%;
+            width: 100%;
             max-width: 800px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         .door {
             position: relative;
@@ -29,8 +37,9 @@
             text-align: center;
             cursor: pointer;
             border: 2px solid #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s;
+            overflow: hidden;
         }
         .door:hover {
             transform: scale(1.05);
@@ -50,7 +59,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2em;
+            font-size: 1.5em;
         }
         .door.open .door-content {
             display: none;
@@ -67,10 +76,12 @@
             bottom: 0;
             padding: 10px;
             text-align: center;
+            overflow-y: auto;
         }
         .door-reveal img {
             max-width: 100%;
             height: auto;
+            margin-bottom: 10px;
         }
         .door-reveal audio {
             width: 100%;
@@ -80,7 +91,7 @@
 </head>
 <body>
     <div class="calendar">
-        <!-- Türchen werden hier durch JavaScript eingefügt -->
+        <!-- Die Türchen werden dynamisch durch JavaScript generiert -->
     </div>
 
     <script>
@@ -108,7 +119,7 @@
             { title: "Feel the Night - Ostbahnhof", cover: "cover21.jpg", audio: "song21.mp3" },
             { title: "Evolution - Rebel Scum", cover: "cover22.jpg", audio: "song22.mp3" },
             { title: "55555 Philip Dkick - Sinistarr", cover: "cover23.jpg", audio: "song23.mp3" },
-            { title: "Senna Mix Tape Vol 1 - Dub... + Joker - Dein eigenes Album", cover: "cover24.jpg", audio: "song24.mp3" }
+            { title: "Senna Mix Tape Vol 1 - Dein eigenes Album", cover: "cover24.jpg", audio: "song24.mp3" }
         ];
 
         const calendar = document.querySelector('.calendar');
@@ -151,4 +162,12 @@
 
             door.addEventListener('click', () => {
                 if (!door.classList.contains('locked')) {
-                    door.classList.add(' 
+                    door.classList.add('open');
+                }
+            });
+
+            calendar.appendChild(door);
+        });
+    </script>
+</body>
+</html>
