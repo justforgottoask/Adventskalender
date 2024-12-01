@@ -6,8 +6,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f7f7f7 url('https://source.unsplash.com/1600x900/?winter,snow') no-repeat center center fixed;
-            background-size: cover;
+            background: #f0f0f0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,12 +17,8 @@
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             gap: 10px;
-            width: 90%;
+            width: 80%;
             max-width: 800px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         .door {
             position: relative;
@@ -34,7 +29,7 @@
             text-align: center;
             cursor: pointer;
             border: 2px solid #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
             transition: transform 0.3s;
         }
         .door:hover {
@@ -76,7 +71,6 @@
         .door-reveal img {
             max-width: 100%;
             height: auto;
-            margin-bottom: 10px;
         }
         .door-reveal audio {
             width: 100%;
@@ -86,44 +80,41 @@
 </head>
 <body>
     <div class="calendar">
-        <!-- Die Türchen werden dynamisch durch JavaScript generiert -->
+        <!-- Türchen werden hier durch JavaScript eingefügt -->
     </div>
 
     <script>
         const songs = [
-            { title: "Give Out (Feed Me Remix) - Kill the Noise", cover: "https://via.placeholder.com/150", audio: "song1.mp3" },
-            { title: "Dreamers - Emba, bCee", cover: "https://via.placeholder.com/150", audio: "song2.mp3" },
-            { title: "Milan - L?cy", cover: "https://via.placeholder.com/150", audio: "song3.mp3" },
-            { title: "South Side Stepper - Sustaree", cover: "https://via.placeholder.com/150", audio: "song4.mp3" },
-            { title: "The Zodiac - Catacomb", cover: "https://via.placeholder.com/150", audio: "song5.mp3" },
-            { title: "Joker Day - Dein eigener Song", cover: "https://via.placeholder.com/150", audio: "song6.mp3" },
-            { title: "Alright Did Me - Manix", cover: "https://via.placeholder.com/150", audio: "song7.mp3" },
-            { title: "Moonshine - Harmony", cover: "https://via.placeholder.com/150", audio: "song8.mp3" },
-            { title: "Champion - TMSV", cover: "https://via.placeholder.com/150", audio: "song9.mp3" },
-            { title: "I'm the Shit - Nitepunk", cover: "https://via.placeholder.com/150", audio: "song10.mp3" },
-            { title: "Freq U All Nite - Ketboi69", cover: "https://via.placeholder.com/150", audio: "song11.mp3" },
-            { title: "Terrorist - Renegade", cover: "https://via.placeholder.com/150", audio: "song12.mp3" },
-            { title: "Another Place - Elliotsclomm", cover: "https://via.placeholder.com/150", audio: "song13.mp3" },
-            { title: "Trust Us - Aksports", cover: "https://via.placeholder.com/150", audio: "song14.mp3" },
-            { title: "Gotta Good Thing - Lyric", cover: "https://via.placeholder.com/150", audio: "song15.mp3" },
-            { title: "Horses on Acid - Rove Ranger", cover: "https://via.placeholder.com/150", audio: "song16.mp3" },
-            { title: "Wasted Love - BenZel", cover: "https://via.placeholder.com/150", audio: "song17.mp3" },
-            { title: "One More Day - Example", cover: "https://via.placeholder.com/150", audio: "song18.mp3" },
-            { title: "Panckmonium - Kessler", cover: "https://via.placeholder.com/150", audio: "song19.mp3" },
-            { title: "The Future - DJ Limited", cover: "https://via.placeholder.com/150", audio: "song20.mp3" },
-            { title: "Feel the Night - Ostbahnhof", cover: "https://via.placeholder.com/150", audio: "song21.mp3" },
-            { title: "Evolution - Rebel Scum", cover: "https://via.placeholder.com/150", audio: "song22.mp3" },
-            { title: "55555 Philip Dkick - Sinistarr", cover: "https://via.placeholder.com/150", audio: "song23.mp3" },
-            { title: "Senna Mix Tape Vol 1 - Dein eigenes Album", cover: "https://via.placeholder.com/150", audio: "song24.mp3" }
+            { title: "Give Out (Feed Me Remix) - Kill the Noise", cover: "cover1.jpg", audio: "song1.mp3" },
+            { title: "Dreamers - Emba, bCee", cover: "cover2.jpg", audio: "song2.mp3" },
+            { title: "Milan - L?cy", cover: "cover3.jpg", audio: "song3.mp3" },
+            { title: "South Side Stepper - Sustaree", cover: "cover4.jpg", audio: "song4.mp3" },
+            { title: "The Zodiac - Catacomb", cover: "cover5.jpg", audio: "song5.mp3" },
+            { title: "Joker Day - Dein eigener Song", cover: "cover6.jpg", audio: "song6.mp3" },
+            { title: "Alright Did Me - Manix", cover: "cover7.jpg", audio: "song7.mp3" },
+            { title: "Moonshine - Harmony", cover: "cover8.jpg", audio: "song8.mp3" },
+            { title: "Champion - TMSV", cover: "cover9.jpg", audio: "song9.mp3" },
+            { title: "I'm the Shit - Nitepunk", cover: "cover10.jpg", audio: "song10.mp3" },
+            { title: "Freq U All Nite - Ketboi69", cover: "cover11.jpg", audio: "song11.mp3" },
+            { title: "Terrorist - Renegade", cover: "cover12.jpg", audio: "song12.mp3" },
+            { title: "Another Place - Elliotsclomm", cover: "cover13.jpg", audio: "song13.mp3" },
+            { title: "Trust Us - Aksports", cover: "cover14.jpg", audio: "song14.mp3" },
+            { title: "Gotta Good Thing - Lyric", cover: "cover15.jpg", audio: "song15.mp3" },
+            { title: "Horses on Acid - Rove Ranger", cover: "cover16.jpg", audio: "song16.mp3" },
+            { title: "Wasted Love - BenZel", cover: "cover17.jpg", audio: "song17.mp3" },
+            { title: "One More Day - Example", cover: "cover18.jpg", audio: "song18.mp3" },
+            { title: "Panckmonium - Kessler", cover: "cover19.jpg", audio: "song19.mp3" },
+            { title: "The Future - DJ Limited", cover: "cover20.jpg", audio: "song20.mp3" },
+            { title: "Feel the Night - Ostbahnhof", cover: "cover21.jpg", audio: "song21.mp3" },
+            { title: "Evolution - Rebel Scum", cover: "cover22.jpg", audio: "song22.mp3" },
+            { title: "55555 Philip Dkick - Sinistarr", cover: "cover23.jpg", audio: "song23.mp3" },
+            { title: "Senna Mix Tape Vol 1 - Dub... + Joker - Dein eigenes Album", cover: "cover24.jpg", audio: "song24.mp3" }
         ];
-
-        // Türchen mischen
-        const shuffledSongs = songs.sort(() => Math.random() - 0.5);
 
         const calendar = document.querySelector('.calendar');
         const today = new Date().getDate();
 
-        shuffledSongs.forEach((song, index) => {
+        songs.forEach((song, index) => {
             const door = document.createElement('div');
             door.classList.add('door');
             if (index + 1 > today) {
@@ -160,12 +151,6 @@
 
             door.addEventListener('click', () => {
                 if (!door.classList.contains('locked')) {
-                    door.classList.add('open');
-                }
-            });
-
-            calendar.appendChild(door);
-        });
-    </script>
-</body>
-</html>
+                    door.classList.add('
+::contentReference[oaicite:0]{index=0}
+ 
